@@ -11,9 +11,41 @@ services:
       context: ./gateway-service
       dockerfile: Dockerfile
     restart: unless-stopped
+    depends_on:
+      - eureka-server
 
   health:
     build:
       context: ./health-service
       dockerfile: Dockerfile
     restart: unless-stopped
+    depends_on:
+      - eureka-server
+      - gateway
+  
+  lodging:
+    build: 
+      context: ./lodging-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - eureka-server
+      - gateway
+  
+  matches:
+    build: 
+      context: ./matches-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - eureka-server
+      - gateway
+  
+  travel:
+    build: 
+      context: ./travel-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - eureka-server
+      - gateway

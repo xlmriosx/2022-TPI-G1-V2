@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  eureka-server:
+    build: 
+      context: ./eureka-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    restart: unless-stopped

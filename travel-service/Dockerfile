@@ -1,5 +1,5 @@
 FROM openjdk:11
-CMD mvn clean install
+CMD ["./", "mvn clean install"]
 VOLUME /tmp
 EXPOSE 8004
 ADD ./target/travel-0.0.1-SNAPSHOT.jar travel.jar

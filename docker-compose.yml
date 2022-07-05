@@ -11,3 +11,9 @@ services:
       context: ./gateway-service
       dockerfile: Dockerfile
     restart: unless-stopped
+
+  health:
+    build:
+      context: ./health-service
+      dockerfile: Dockerfile
+    restart: unless-stopped

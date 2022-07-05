@@ -7,7 +7,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HomeComponent } from './shared/components/home/home.component';
-import { LoginSignupComponent } from './login-signup/login-signup.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { LoginSignupComponent } from './login-signup/login-signup.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LoginSignupComponent,
+    SignupComponent,
+    LoginComponent,
     
   ],
   imports: [

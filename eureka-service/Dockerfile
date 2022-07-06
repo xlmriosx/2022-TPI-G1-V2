@@ -1,5 +1,7 @@
+FROM ubuntu
+CMD mvn clean install
+
 FROM openjdk:11
-RUN ["/bin/sh", "mvn clean install"]
 VOLUME /tmp
 EXPOSE 8761
 ADD ./target/eureka-0.0.1-SNAPSHOT.jar eureka-server.jar

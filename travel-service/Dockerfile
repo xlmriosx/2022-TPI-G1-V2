@@ -1,5 +1,5 @@
 FROM ubuntu
-CMD mvn clean install
+RUN mvn clean install
 
 FROM openjdk:11
 VOLUME /tmp

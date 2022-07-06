@@ -1,18 +1,11 @@
 version: '3.8'
+run: cd 
 services:
   eureka-server:
     build: 
       context: ./eureka-service
       dockerfile: Dockerfile
     restart: unless-stopped
-
-  gateway:
-    build:
-      context: ./gateway-service
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    depends_on:
-      - eureka-server
 
   health:
     build:
@@ -21,7 +14,6 @@ services:
     restart: unless-stopped
     depends_on:
       - eureka-server
-      - gateway
   
   lodging:
     build: 
@@ -30,7 +22,6 @@ services:
     restart: unless-stopped
     depends_on:
       - eureka-server
-      - gateway
   
   matches:
     build: 
@@ -39,7 +30,6 @@ services:
     restart: unless-stopped
     depends_on:
       - eureka-server
-      - gateway
   
   travel:
     build: 
@@ -48,4 +38,15 @@ services:
     restart: unless-stopped
     depends_on:
       - eureka-server
-      - gateway
+
+  gateway:
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - eureka-server
+      - health
+      - lodging
+      - matches
+      - travel

@@ -1,0 +1,40 @@
+<div style="padding:150px;">
+    <mat-card>
+        <mat-card-title>Novo Produto</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="vistTeam"
+                    [(ngModel)]="matches.vistTeam" description="vistTeam">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="localTeam"
+                    [(ngModel)]="matches.localTeam" description="localTeam">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="matchDate"
+                    [(ngModel)]="matches.matchDate" description="matchDate">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="matchTime"
+                    [(ngModel)]="matches.matchTime" description="matchTime">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="stadium"
+                    [(ngModel)]="matches.stadium" description="stadium">
+            </mat-form-field>
+
+            
+        </form>
+        <button mat-raised-button (click)="createMatches()" color="primary">
+            Salvar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card>
+</div>

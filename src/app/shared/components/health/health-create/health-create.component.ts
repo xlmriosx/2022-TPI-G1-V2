@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class HealthCreateComponent implements OnInit {
 
   health: Health = {
-    id: 0,
+    id: 1,
     description: '',
+    services: [],
   }
 
   constructor(private healthService: HealthService,

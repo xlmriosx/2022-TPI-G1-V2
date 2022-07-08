@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HealthReadComponent implements OnInit {
 
   healths: Health[] | any
-  displayedColumns = ['id', 'description']
+  displayedColumns = ['id', 'description', 'services']
   
   constructor(private healthService: HealthService) { }
 

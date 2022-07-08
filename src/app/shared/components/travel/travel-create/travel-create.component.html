@@ -1,0 +1,20 @@
+<div style="padding:150px;">
+    <mat-card>
+        <mat-card-title>Novo Produto</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Descripcion"
+                    [(ngModel)]="travel.descripcion" description="descripcion">
+            </mat-form-field>
+
+            
+        </form>
+        <button mat-raised-button (click)="createTravel()" color="primary">
+            Salvar
+        </button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card>
+</div>
